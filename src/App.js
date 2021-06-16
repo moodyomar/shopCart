@@ -14,8 +14,8 @@ import shopApp from "./shop/shopApp";
 import shopCart from "./shop/shopCart";
 import Footer from "./mainComps/footer";
 
-let reduxDevTool = window.__REDUX_DEVTOOLS_EXTENSION__() ? window.__REDUX_DEVTOOLS_EXTENSION__() : f => f
-const shopStore = createStore(shopReducer,reduxDevTool)
+// let reduxDevTool = window.__REDUX_DEVTOOLS_EXTENSION__() ? window.__REDUX_DEVTOOLS_EXTENSION__() : f => f
+const shopStore = createStore(shopReducer)
 
 function App() {
   return (
