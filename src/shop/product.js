@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
-import { useDispatch } from "react-redux"
+import { useDispatch, useSelector } from "react-redux"
 import { Actions } from '../actions/actions';
 
 function Product({ item }) {
   let [showMore, setShowMore] = useState(false)
+  let addedToCart = useSelector(state => state.addedToCart)
   let dispatch = useDispatch()
 
   return (
@@ -20,7 +21,7 @@ function Product({ item }) {
         
         { !item.inCart ? 
         <button onClick={() => {
-          dispatch(Actions.openSideCart())
+          // dispatch(Actions.openSideCart())
           item.inCart = true;
           dispatch(Actions.addToCart(item))
         }} className="btn btn-dark me-2">ADD TO CART</button> :
