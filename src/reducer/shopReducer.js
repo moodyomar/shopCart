@@ -21,7 +21,7 @@ switch(action.type){
     return {...state,addedToCart:[...state.addedToCart,action.add]}
 
   case "DEL_FROM_CART":
-    let temp_ar = state.addedToCart.filter(item => item.id != action.del)
+    let temp_ar = state.addedToCart.filter(item => item.id !== action.del)
     return {...state,addedToCart:[...temp_ar]}
     
     
