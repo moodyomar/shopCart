@@ -5,7 +5,6 @@ import SideCart from "./sideCart";
 import { fakeStoreJson as ar } from "../fakeStore"
 
 
-
 function shopApp(props) {
 
   return (

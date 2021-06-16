@@ -1,15 +1,10 @@
 import React, { useState } from 'react';
-import { useDispatch, useSelector } from "react-redux"
+import { useDispatch } from "react-redux"
 import { Actions } from '../actions/actions';
 
 function Product({ item }) {
   let [showMore, setShowMore] = useState(false)
-  let addedToCart = useSelector(state => state.addedToCart)
   let dispatch = useDispatch()
-
-  const showAddedBtn = () => { 
-    
-  }
 
   return (
     <>

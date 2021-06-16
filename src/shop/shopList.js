@@ -6,7 +6,6 @@ function ShopList({ar}){
   
   useEffect(() => {
 console.log(ar);
-
 })
 
   return(
