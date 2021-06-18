@@ -9,7 +9,7 @@ function Product({ item }) {
 
   return (
     <>
-      <div key={item.id} className="col-lg-3 col-md-5 col-sm-5 mb-5 mx-3 p-3 border text-center shadow">
+      <div key={item.id} className="col-lg-3 col-md-5 col-sm-5 mb-5 mx-3 p-3 border text-center shadow hoverable">
         <div className="productImage" style={{backgroundImage:`url(${item.image})`}}></div>
         <h3 className="mt-2">{item.title.substr(0, 19)}</h3>
         <h4 className="badge bg-warning">{item.category}</h4>
@@ -18,10 +18,12 @@ function Product({ item }) {
           setShowMore(!showMore)
         }}>show more</p>
         <h4>{item.price}$</h4>
-        
         { !item.inCart ? 
         <button onClick={() => {
-          // dispatch(Actions.openSideCart())
+          if(addedToCart.length < 1){
+            dispatch(Actions.openSideCart())
+          }
+          console.log(addedToCart.length+1);
           item.inCart = true;
           dispatch(Actions.addToCart(item))
         }} className="btn btn-dark me-2">ADD TO CART</button> :

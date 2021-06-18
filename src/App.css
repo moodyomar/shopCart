@@ -10,8 +10,15 @@
 position: fixed !important;
 top: 0;
 background-color: #fff;
+z-index: 100;
 }
-
+.hoverable{
+  transition: all .15s ease-in;
+}
+.hoverable:hover{
+  transform: scale(1.05);
+  transition: all .2s ease-out;
+}
 .cp{
   cursor: pointer;
 }
@@ -57,9 +64,35 @@ transition: all .3s ease-out;
   top: 46px;
   right: 0;
   transition: all .3s ease-in;
+  z-index: 100;
+}
+
+.cartNotification{
+  position: absolute;
+right: 0;
+top: 0;
+margin-right: 30px;
+margin-top: 3px;
+  background-color: rgba(255, 0, 0, 0.88);
+  display: flex;
+  justify-content: center;
+  font-size: 1em;
+  color: #fff;
+  font-weight: 800;
+  width: 25px;
+  height: 25px;
+  text-align: center;
+  padding: 5px auto; 
+  border-radius: 50%;
+  z-index: 100;
 }
 
 @media (max-width:991px){
+  .cartNotification{
+top: 0;
+left: 0;
+margin-left: 35px;
+  }
   .desktopOnly{
     display: none;
   }

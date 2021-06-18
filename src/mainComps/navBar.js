@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { NavLink } from "react-router-dom";
-import { useDispatch } from "react-redux"
+import { useDispatch, useSelector } from "react-redux"
 import { FaShoppingCart } from 'react-icons/fa';
 import { Actions } from '../actions/actions';
 
@@ -8,6 +8,7 @@ import { Actions } from '../actions/actions';
 function Navbar(props) {
 
   let [showMobileNav, setShowMobileNav] = useState(false)
+  let addedToCart = useSelector(state => state.addedToCart)
   let dispach = useDispatch()
 
   const OpenSideCart = () => {
@@ -32,6 +33,9 @@ function Navbar(props) {
           <NavLink exact activeClassName="active" to="/cart">Cart</NavLink>
           <FaShoppingCart onClick={OpenSideCart} className="fs-4 ms-3 desktopOnly cp" />
         </nav>
+        {addedToCart.length > 0 &&
+        <div className="cartNotification">{addedToCart.length}</div> 
+        }
       </div>
     </div>
   )

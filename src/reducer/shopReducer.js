@@ -1,14 +1,11 @@
 const initState = {
   sideCart:'closed',
   addedToCart:[
-   
   ]
 }
 
 export const shopReducer = (state = initState, action) => {
 switch(action.type){
-  case "TEST":
-    return {...state,number:+1}
 
   case "CLOSE_SIDE_CART":
   return {...state,sideCart:'closed'}
@@ -25,7 +22,6 @@ switch(action.type){
     return {...state,addedToCart:[...temp_ar]}
     
     
-
     default:
       return state
 }
