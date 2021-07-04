@@ -9,6 +9,7 @@ function shopApp(props) {
 
   return (
       <>
+      <div className="siteHeading">Shop Now</div> 
         <SideCart />
         <ShopList ar={ar} />
       </>
