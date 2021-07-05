@@ -1,11 +1,14 @@
 import { AiFillCloseCircle, AiOutlineCloseCircle } from 'react-icons/ai'
+import {
+  Link
+} from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux"
 import { Actions } from '../redux/actions/actions';
 
 function SideCart(props) {
 
-  let sideCart = useSelector(state => state.sideCart)
-  let addedToCart = useSelector(state => state.addedToCart)
+  let sideCart = useSelector(state => state.shopReducer.sideCart)
+  let addedToCart = useSelector(state => state.shopReducer.addedToCart)
   let dispatch = useDispatch()
 
 
@@ -44,7 +47,9 @@ function SideCart(props) {
         </div>
         <div className="pPrice text-center mt-5">Subtotal: {addedToCart.reduce((acc,cv) =>  acc += cv.price , 0).toFixed(2)}$</div>
         <hr />
-        <div className="d-flex justify-content-center"><button className="btn btn-dark me-2">View Cart</button>
+        <div className="d-flex justify-content-center">
+          
+          <Link to="/cart"><button className="btn btn-dark me-2">View Cart</button></Link>
           <button className="btn btn-dark">Checkout</button></div>
       </div>
     </div>

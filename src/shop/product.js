@@ -4,7 +4,7 @@ import { Actions } from '../redux/actions/actions';
 
 function Product({ item }) {
   let [showMore, setShowMore] = useState(false)
-  let addedToCart = useSelector(state => state.addedToCart)
+  let addedToCart = useSelector(state => state.shopReducer.addedToCart)
   let dispatch = useDispatch()
 
   return (

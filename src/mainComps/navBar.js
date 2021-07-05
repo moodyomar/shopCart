@@ -8,7 +8,7 @@ import { Actions } from '../redux/actions/actions';
 function Navbar(props) {
 
   let [showMobileNav, setShowMobileNav] = useState(false)
-  let addedToCart = useSelector(state => state.addedToCart)
+  let addedToCart = useSelector(state => state.shopReducer.addedToCart)
   let dispach = useDispatch()
 
   const OpenSideCart = () => {
