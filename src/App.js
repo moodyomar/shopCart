@@ -7,7 +7,7 @@ import {
 import './App.css';
 import { Provider } from 'react-redux';
 import { createStore } from 'redux';
-import { shopReducer } from './reducer/shopReducer';
+import { shopReducer } from './redux/reducers/shopReducer';
 import NavBar from "./mainComps/navBar"
 import Home from "./mainComps/home"
 import shopApp from "./shop/shopApp";

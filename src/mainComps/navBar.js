@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { NavLink } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux"
 import { FaShoppingCart } from 'react-icons/fa';
-import { Actions } from '../actions/actions';
+import { Actions } from '../redux/actions/actions';
 
 
 function Navbar(props) {

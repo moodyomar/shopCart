@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from "react-redux"
-import { Actions } from '../actions/actions';
+import { Actions } from '../redux/actions/actions';
 
 function Product({ item }) {
   let [showMore, setShowMore] = useState(false)

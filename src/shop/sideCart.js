@@ -1,6 +1,6 @@
 import { AiFillCloseCircle, AiOutlineCloseCircle } from 'react-icons/ai'
 import { useDispatch, useSelector } from "react-redux"
-import { Actions } from '../actions/actions';
+import { Actions } from '../redux/actions/actions';
 
 function SideCart(props) {
 
