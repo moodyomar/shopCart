@@ -41,7 +41,6 @@ color:red;
  background-size: contain;
   background-repeat: no-repeat;
   background-position: center center;
- /* if im working offline */
   min-height: 250px;
   border-radius: 10px;
 }
@@ -117,13 +116,13 @@ margin-left: 35px;
   header nav { 
     position: absolute;
     right:0;
-    top:58px;
-    width:70% !important;
+    top:39.2px;
+    width:40vw !important;
+    height: 100vh;
     background: white;
     padding:0 !important;
-    display: none;
-    border:1px solid grey;
-    
+  transform: translateX(100%);
+  transition: .3s all ease-out;    
   }
 
   .sideCart{

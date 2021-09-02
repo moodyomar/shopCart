@@ -1,11 +1,11 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { NavLink } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux"
 import { FaShoppingCart } from 'react-icons/fa';
 import { Actions } from '../redux/actions/actions';
 
 
-function Navbar(props) {
+function Navbar({location}) {
 
   let [showMobileNav, setShowMobileNav] = useState(false)
   let addedToCart = useSelector(state => state.shopReducer.addedToCart)
@@ -14,6 +14,10 @@ function Navbar(props) {
   const OpenSideCart = () => {
     dispach(Actions.openSideCart())
   }
+
+    useEffect(() => {
+ setShowMobileNav(false);
+  },[location])
 
   return (
     <div className="container-fluid shadow pf-zindex">
@@ -27,7 +31,7 @@ function Navbar(props) {
             <i className="fa fa-bars fs-2" aria-hidden="true"></i>
           </div>
         </div>
-        <nav className="col-lg-9 text-end" style={{ display: showMobileNav && "block" }}>
+        <nav className="col-lg-9 text-end shadow" style={{ transform: showMobileNav && "translateX(0%)" }}>
           <NavLink exact activeClassName="active" to="/">Home</NavLink>
           <NavLink exact activeClassName="active" to="/shop">Shop</NavLink>
           <NavLink exact activeClassName="active" to="/cart">Cart</NavLink>

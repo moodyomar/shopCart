@@ -23,9 +23,9 @@ function ShopCart(props) {
                   <strong>{product.price}</strong>
                 </div>
                 <div className="col-lg-3  quantity text-center">
-                  <button class="btnz shadow">+</button>
+                  <button className="btnz shadow">+</button>
                   <strong className="mx-3">1</strong>
-                  <button class="btnz shadow">-</button>
+                  <button className="btnz shadow">-</button>
                 </div>
                   <button onClick={() => dispatch(Actions.deleteFromCart(product.id))} className="btn">Remove</button>
                 <div className="col-lg-1 price text-center ">{product.price}</div>
@@ -44,7 +44,7 @@ function ShopCart(props) {
               <strong>Total Including Shipping</strong>
             </div>
             <div className="col-4 d-flex flex-column">
-              <strong class="mb-3">{addedToCart.reduce((acc, cv) => acc += cv.price, 0).toFixed(2)}$</strong>
+              <strong className="mb-3">{addedToCart.reduce((acc, cv) => acc += cv.price, 0).toFixed(2)}$</strong>
               <strong>{addedToCart.reduce((acc, cv) => acc += cv.price + 9, 0).toFixed(2)}$</strong>
             </div>
           </div>
