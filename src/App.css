@@ -124,6 +124,16 @@ margin-left: 35px;
   transform: translateX(100%);
   transition: .3s all ease-out;    
   }
+.overlayMenu{
+  width: 60vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.45);
+  position: fixed;
+  left: 0;
+  top:39.2px;
+  transform: translateX(-100%);
+  transition: all .25s ease-in;
+}
 
   .sideCart{
     width: 60vw;

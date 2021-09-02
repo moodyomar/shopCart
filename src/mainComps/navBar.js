@@ -21,6 +21,7 @@ function Navbar({location}) {
 
   return (
     <div className="container-fluid shadow pf-zindex">
+      <div className="overlayMenu" style={{transform: showMobileNav && 'translateX(0%)'}}></div>
       <div className="row align-items-center">
         <div className="logo col-lg-3 d-flex justify-content-between align-items-center">
           <div onClick={OpenSideCart} className='cartIcon'><FaShoppingCart className="fs-3" /></div>
