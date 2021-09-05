@@ -25,6 +25,7 @@ function Product({ item }) {
           }
           console.log(addedToCart.length+1);
           item.inCart = true;
+          item.quantity = 1;
           dispatch(Actions.addToCart(item))
         }} className="btn btn-dark me-2">ADD TO CART</button> :
         <button onClick={() => {

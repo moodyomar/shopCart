@@ -1,11 +1,11 @@
-import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Actions } from '../redux/actions/actions';
 
 function ShopCart(props) {
   let addedToCart = useSelector(state => state.shopReducer.addedToCart);
+let subtotal = addedToCart.reduce((acc, cv) => acc += (cv.price * cv.quantity), 0).toFixed(2)
+let total = subtotal > 30 ? 9.99 : 0.00
   let dispatch = useDispatch();
-
   return (
     <>
       <div className="siteHeading">Cart</div>
@@ -20,12 +20,12 @@ function ShopCart(props) {
                   <img src={product.image} alt="" class="float-start me-2 p-1 w-25" />
                   <h4 class="h5 mt-1">{product.title.substr(0, 19)}</h4>
                   <p>{product.category}</p>
-                  <strong>{product.price}</strong>
+                  <strong>{(product.price * product.quantity).toFixed(2)}</strong>
                 </div>
                 <div className="col-lg-3  quantity text-center">
-                  <button className="btnz shadow">+</button>
-                  <strong className="mx-3">1</strong>
-                  <button className="btnz shadow">-</button>
+                  <button onClick={() => dispatch(Actions.incrementQty(product.id))}  className="btnz shadow">+</button>
+                  <strong className="mx-3">{product.quantity}</strong>
+                  <button onClick={() => product.quantity > 1 ? dispatch(Actions.decrementQty(product.id)) : dispatch(Actions.deleteFromCart(product.id))}  className="btnz shadow">-</button>
                 </div>
                   <button onClick={() => dispatch(Actions.deleteFromCart(product.id))} className="btn">Remove</button>
                 <div className="col-lg-1 price text-center ">{product.price}</div>
@@ -44,8 +44,8 @@ function ShopCart(props) {
               <strong>Total Including Shipping</strong>
             </div>
             <div className="col-4 d-flex flex-column">
-              <strong className="mb-3">{addedToCart.reduce((acc, cv) => acc += cv.price, 0).toFixed(2)}$</strong>
-              <strong>{addedToCart.reduce((acc, cv) => acc += cv.price + 9, 0).toFixed(2)}$</strong>
+              <strong className="mb-3">{subtotal}$</strong>
+              <strong>{subtotal < 100 ? total : 19.99}$</strong>
             </div>
           </div>
           <button className="btn btn-dark mt-4">CHECKOUT</button>

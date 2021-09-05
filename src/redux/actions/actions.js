@@ -10,5 +10,11 @@ export const Actions = {
   },
   deleteFromCart:(_id) => {
     return {type:"DEL_FROM_CART",del:_id}
+  },
+  incrementQty:(_id) => {
+    return {type:"INC_ITEM_QTY",_id}
+  },
+  decrementQty:(_id) => {
+    return {type:"DEC_ITEM_QTY",_id}
   }
 }
